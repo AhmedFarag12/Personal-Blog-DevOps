@@ -1,0 +1,29 @@
+<h1><%= post ? "Edit Post" : "New Post" %></h1>
+
+<form
+  action="<%= post ? `/admin/posts/${post._id}?_method=PUT` : '/admin/posts' %>"
+  method="POST"
+  class="form"
+>
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title" required value="<%= post ? post.title : '' %>" />
+
+  <label for="excerpt">Excerpt</label>
+  <textarea id="excerpt" name="excerpt" rows="2"><%= post ? post.excerpt : '' %></textarea>
+
+  <label for="content">Content (HTML allowed)</label>
+  <textarea id="content" name="content" rows="14" required><%= post ? post.content : '' %></textarea>
+
+  <label for="coverImage">Cover image URL</label>
+  <input type="text" id="coverImage" name="coverImage" value="<%= post ? post.coverImage : '' %>" />
+
+  <label for="tags">Tags (comma separated)</label>
+  <input type="text" id="tags" name="tags" value="<%= post && post.tags ? post.tags.join(', ') : '' %>" />
+
+  <label class="checkbox-label">
+    <input type="checkbox" name="published" <%= (!post || post.published) ? 'checked' : '' %> />
+    Published
+  </label>
+
+  <button type="submit"><%= post ? "Save Changes" : "Create Post" %></button>
+</form>

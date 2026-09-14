@@ -1,0 +1,35 @@
+<div class="admin-header">
+  <h1>Dashboard</h1>
+  <a class="button" href="/admin/posts/new">+ New Post</a>
+</div>
+
+<% if (posts.length === 0) { %>
+  <p class="empty">No posts yet.</p>
+<% } else { %>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Created</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% posts.forEach(post => { %>
+        <tr>
+          <td><a href="/posts/<%= post.slug %>"><%= post.title %></a></td>
+          <td><%= post.published ? "Published" : "Draft" %></td>
+          <td><%= post.createdAt.toDateString() %></td>
+          <td class="row-actions">
+            <a href="/admin/posts/<%= post._id %>/edit">Edit</a>
+            <form action="/admin/posts/<%= post._id %>?_method=DELETE" method="POST" class="inline-form"
+                  onsubmit="return confirm('Delete this post?')">
+              <button type="submit" class="link-button danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>

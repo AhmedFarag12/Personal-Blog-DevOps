@@ -1,0 +1,30 @@
+{
+  "name": "personal-blog",
+  "version": "1.0.0",
+  "description": "A simple personal blog app built with Express, EJS and MongoDB.",
+  "license": "ISC",
+  "author": "ahmed farag",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed:admin": "node scripts/createAdmin.js",
+    "seed:posts": "node scripts/seedPosts.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.5.0",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

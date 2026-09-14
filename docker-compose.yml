@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    container_name: personal-blog-app
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      MONGO_URI: mongodb://mongo:27017/personal-blog
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    container_name: personal-blog-mongo
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
