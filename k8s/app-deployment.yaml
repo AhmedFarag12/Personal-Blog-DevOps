@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: personal-blog
-          image: personal-blog:latest
+          image: ahmedfarag1211/personal-blog:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
