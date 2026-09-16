@@ -72,7 +72,6 @@ pipeline {
                 ]) {
                     sh '''
                         kubectl apply -f k8s/namespace.yaml
-                        kubectl apply -f k8s/secret.yaml
                         kubectl apply -f k8s/mongo-pv.yaml
                         kubectl apply -f k8s/mongo-pvc.yaml
                         kubectl apply -f k8s/mongo-deployment.yaml
