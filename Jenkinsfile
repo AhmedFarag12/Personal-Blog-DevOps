@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "YOUR_DOCKERHUB_USERNAME/personal-blog"
+        DOCKER_IMAGE = "ahmedfarag1211/personal-blog"
         DOCKER_CREDENTIALS = "dockerhub-credentials"
         KUBECONFIG_CREDENTIALS = "kubeconfig-credentials"
         K8S_NAMESPACE = "personal-blog"
