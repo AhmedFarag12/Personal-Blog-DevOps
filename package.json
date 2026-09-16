@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "test": "echo \"no tests specified\" && exit 0",
     "seed:admin": "node scripts/createAdmin.js",
     "seed:posts": "node scripts/seedPosts.js"
   },
